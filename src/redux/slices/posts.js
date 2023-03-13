@@ -7,6 +7,11 @@ export const fetchPost = createAsyncThunk("posts/fetchPosts", async () => {
   return data;
 });
 
+export const fetchTags = createAsyncThunk("/posts/fetchTags", async () => {
+  const { data } = await axios.get("/tags");
+  return data;
+});
+
 const initialState = {
   posts: {
     items: [],
